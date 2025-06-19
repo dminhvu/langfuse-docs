@@ -1,0 +1,59 @@
+---
+title: Choosing Eval Methods
+description: Get started with LLM observability with Langfuse in minutes before diving into all platform features.
+---
+
+# Choosing Eval Methods
+
+## Core dimensions to keep in mind
+
+| Dimension | Why it matters |
+| :---- | :---- |
+| **Development stage** – PoC → staging → prod | Determines how quickly you need signal and how much real data you have |
+| **Customer volume** – few (B2B) vs. many (B2C) | Dictates how easily you can gather organic feedback |
+| **Output risk / compliance** | Higher stakes require provable, repeatable scores and audit trails |
+
+## Evaluation toolbox & when to introduce each tool
+
+| Method | What it does | When to introduce |
+| :---- | :---- | :---- |
+| **Tracing** | Logs every LLM call, cost, latency & prompt version | Day 1 of a PoC; it is the universal safety net  |
+| **User-feedback capture** | Collects thumbs-up/down or comment in UI | Small beta or staging groups to surface real-world issues |
+| **Human annotation queues** | Route selected traces to annotators who label accuracy, policy, style, etc. in Langfuse | When stakes rise or you need a "gold" dataset (B2B, regulated) |
+| **Offline dataset tests** | 20-100 end-to-end examples run locally or in CI before every merge | As soon as you have a stable prompt & test cases; crucial for B2B SLAs |
+| **Model-based evaluation (LLM-as-a-judge)** | Cheap automatic scoring against your rubric | After you've gathered a few dozen human-labeled examples to calibrate  |
+| **A/B or shadow tests** | Compare prompt/model versions on live traffic | Once you have hundreds/thousands of daily sessions (typical B2C scale) |
+| **Release & prompt tracking** | Links changes to score deltas; prevents silent regressions | Needed the moment multiple people ship prompts or models |
+
+## By Development lifecycle
+
+| Stage | Primary goal | Minimum viable eval stack |
+| :---- | :---- | :---- |
+| **Proof-of-concept** | Debug fast | Tracing |
+| **Testing & staging** | Improve quality with a small cohort | Tracing + user feedback + a handful of manual annotations |
+| **Beta launch** | Prevent regressions while iterating | Add offline dataset tests, scale human annotation queues, start model-based judges |
+| **Full production** | Optimise KPIs & prove compliance | Continuous model judging, A/B tests, release tracking; keep human annotation for high-risk slices |
+
+## By product type
+
+| Product type | First-class methods | Rationale |
+| :---- | :---- | :---- |
+| **Compliance-heavy B2B** | Human annotation → offline tests → tracing | Clients & auditors demand verifiable scores before rollout |
+| **High-volume B2C** | Tracing → user feedback → A/B tests + model judges | Large user base supplies free labels; need rapid experimentation |
+| **Creative / low-risk tools** | Tracing →Prompt management + light model judging | Speed matters more than absolute correctness |
+
+## Implementation checklist
+
+- [ ] **Instrument tracing right away** so nothing is lost.
+
+- [ ] **Collect explicit user ratings** in staging; turn the worst traces into annotation tasks.
+
+- [ ] **Spin up annotation queues** for critical slices (e.g., enterprise customers, finance answers).
+
+- [ ] **Calibrate a model-based judge** with 20-100 high-quality human labels, then score everything.
+
+- [ ] **Lock quality gates in CI** using your offline dataset before merging.
+
+- [ ] **Experiment safely in prod** with A/B or shadow deployments and release tracking.
+
+Following this layering approach lets teams move from idea → launch → reliable scale without over-engineering early on or flying blind once real users arrive.

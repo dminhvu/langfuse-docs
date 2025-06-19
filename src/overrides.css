@@ -135,3 +135,21 @@ details>div {
 details>summary {
   font-weight: 700;
 }
+
+/* Table styling - darker header row */
+table thead th {
+  background-color: hsl(var(--muted)) !important;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: hsl(var(--muted) / 0.5) !important;
+}
+
+/* Dark mode table styling */
+:root[class~="dark"] table thead th {
+  background-color: hsl(var(--muted)) !important;
+}
+
+:root[class~="dark"] table tbody tr:nth-child(even) {
+  background-color: hsl(var(--muted) / 0.3) !important;
+}
