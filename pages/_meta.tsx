@@ -112,6 +112,15 @@ export default {
       timestamp: false,
     },
   },
+  government: {
+    title: "Government",
+    type: "page",
+    display: "hidden",
+    theme: {
+      typesetting: "article",
+      timestamp: false,
+    },
+  },
   library: {
     title: "Library",
     type: "page",
