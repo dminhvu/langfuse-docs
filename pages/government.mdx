@@ -6,30 +6,46 @@ title: Langfuse for Government | Open-Source LLM Observability
 import { Callout } from "nextra/components"
 import { RoadmapBadge } from "@/components/RoadmapBadge"
 
-# Build Trustworthy AI for Mission Success
+# Build Trustworthy AI for Mission Success in Government
 
-The adoption of Artificial Intelligence, particularly Large Language Models (LLMs), presents a transformative opportunity for government agencies. However, this powerful technology also introduces new challenges. Ensuring the reliability, transparency, and security of AI applications is paramount for maintaining public trust. As the landscape of LLM tools changes day by day, it is critical to adopt solutions that offer flexibility and prevent vendor lock-in.
+The adoption of Artificial Intelligence, particularly Large Language Models (LLMs), presents a transformative opportunity for government agencies. However, this powerful technology also introduces new challenges. Ensuring the reliability, transparency, and security of AI applications is paramount for maintaining public trust. The National Institute of Standards and Technology (NIST) has published a draft of the AI RMF (Risk Management Framework) for AI systems, which provides a framework for managing the risks associated with AI systems. As one key pillar, the AI RMF recommends regular measurements to ensure a valid and reliable deployment of AI systems.
 
-[talk to us](/talk-to-us)
 
 <Callout>
 Langfuse enables mission owners to deploy reliable, traceable, and cost-efficient AI systems while meeting government security and compliance requirements.
 </Callout>
 
+As an open source project, Langfuse is the ideal platform to address data security and privacy concerns by self-hosting on FedRAMP authorized infrastructure.
+
+Langfuse is licensed as an open-core project. It’s core product (tracing, observability, evals, prompt management and API/SDK endpoints) is MIT-licensed and freely available (also without limitation for commercial use). Some Langfuse features on the periphery of the core product are not available in the open-source version and cannot be used out of the box. As of today, these are security & compliance features (e.g. SSO enforcement, data retention)
+
+
+<a href="/talk-to-sales" className="button-primary">Talk to sales</a>
+
 
 ## Key Capabilities
 
-### Comply with emerging AI orders
-Attach immutable metadata to every generation - provenance, prompt, model ID, and evaluation score - ready for policy auditors.
-
-### Pinpoint LLM failures in seconds
-Surface mis-aligned outputs, hallucinations, and latency outliers across millions of requests. [Read the docs →](/docs/tracing)
-
-### Correlate cost with mission value
-Track token spend and GPU hours per workflow to optimize budgets.
-
-### Compare model variants side-by-side
-A/B evaluate prompts, embeddings, or vendors; auto-rank with human feedback loops.
+<div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6 mb-10">
+  <div className="rounded-lg border border-gray-200 p-6 shadow-sm">
+    <h3 className="text-lg font-semibold mb-2">Comply with emerging AI orders</h3>
+    <p>Attach immutable metadata to every generation: Prompt, model ID, LLM output, and evaluation score. Ready for policy auditors. <a href="/docs/tracing" className="text-blue-600 hover:underline">Tracing overview. →</a></p>
+  </div>
+  
+  <div className="rounded-lg border border-gray-200 p-6 shadow-sm">
+    <h3 className="text-lg font-semibold mb-2">Pinpoint LLM failures in seconds</h3>
+    <p>Surface misaligned outputs, hallucinations, and latency outliers across millions of requests. <a href="/docs/analytics/overview" className="text-blue-600 hover:underline">LLM Analytics. →</a></p>
+  </div>
+  
+  <div className="rounded-lg border border-gray-200 p-6 shadow-sm">
+    <h3 className="text-lg font-semibold mb-2">Correlate cost with mission value</h3>
+    <p>Track token spend and GPU hours per workflow to optimize budgets.</p>
+  </div>
+  
+  <div className="rounded-lg border border-gray-200 p-6 shadow-sm">
+    <h3 className="text-lg font-semibold mb-2">Compare model variants side-by-side</h3>
+    <p>A/B evaluate prompts, embeddings, or vendors; auto-rank with human feedback loops to improve LLM outputs. <a href="/docs/prompts/get-started" className="text-blue-600 hover:underline">Prompt Management. →</a></p>
+  </div>
+</div>
 
 
 ## Why Government Agencies Choose Langfuse
@@ -41,7 +57,7 @@ Run in GovCloud, IL-5, or air-gapped networks.
 MIT-licensed, auditable, no vendor lock-in.
 
 **Mission-Ready Audit Trails**  
-Immutable logs for FOIA & IG reviews.
+Immutable traces and audit logs for FOIA & IG reviews.
 
 **Cost & Performance Insights**  
 Meet SLAs and defend budget requests with hard numbers.
@@ -49,34 +65,36 @@ Meet SLAs and defend budget requests with hard numbers.
 
 ## Security & Compliance Snapshot
 
-**External Pen-Test:** PASS (March 2025) - full report available under NDA. 
-**SOC2 Type @:** PASS - full report available under NDA. 
-**ISO27001:** PASS - full report available under NDA.  
-**Roadmap:** <RoadmapBadge milestone="NIST 800-53 Control Matrix" eta="Q1 2026" />  <RoadmapBadge milestone="FIPS 140-2 Modules" eta="Q2 2026" />
+**External Pen-Test:** PASS (March 2025) - full report available under NDA.<br/>
+**SOC2 Type @:** PASS - full report available under NDA. <br/>
+**ISO27001:** PASS - full report available under NDA.  <br/>
+**Roadmap:** <RoadmapBadge milestone="NIST AI RMF Support" eta="TBA" />  
 
-<a href="mailto:gov@langfuse.com?subject=Security Package Request" className="button-secondary">Request Security Package</a>
+<a href="https://docs.google.com/forms/d/e/1FAIpQLSeNQZqV69mY59zPQ2t2wPOvGIpVjg0lsz4Rgqe1INGaHq1PnQ/viewform" className="text-blue-600 hover:underline">Request Security Package. →</a>
 
 ## In Production at Leading Labs
 
 > “Langfuse cut our model-triage time by **40%**.” — Staff Scientist, U.S. National Laboratory
 
-## How to Buy
+## How to Get Started
 
-1. **Pick Deployment** → Self-host license
-2. **Request Quote** → [gov@langfuse.com](mailto:gov@langfuse.com)
+1. **Explore** → <a href="https://github.com/langfuse/langfuse">Access full codebase on github.→</a>
+2. **Request Quote** → [enterprise@langfuse.com](mailto:enterprise@langfuse.com)
 3. **Security Package** → Signed NDA unlocks pen-test summary & artifacts
 
 [Download Quote Template](/_assets/langfuse-quote-template.docx)
 
 ## Resources
 
+- [Full feature set](/pricing-self-host) 
+- [Enterprise Edition(EE)FAQ](/open-source#enterprise-edition-ee-faq) 
 - [Self-host in 10-min](/self-hosting/quickstart)
 - [Product Docs](/docs)
 - [GitHub](https://github.com/langfuse/langfuse)
-- [Pen-Test Summary PDF](/_assets/langfuse-pen-test-summary.pdf)
+
 
 ## Contact
 
-Have questions? Email **gov@langfuse.com** or [book a demo](/talk-to-us).
+Have questions? Email **enterprise@langfuse.com** or [book a call](/talk-to-sales).
 
 ---
